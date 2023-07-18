@@ -159,6 +159,10 @@ img {
     transition-duration: 0.5s;
 }
 
+.header-burger {
+    display: none;
+}
+
 .nav-list {
     margin: 0;
     padding: 0;
@@ -400,6 +404,8 @@ img {
     text-decoration: underline;
 }
 
+/* MEDIA */
+
 @media screen and (max-width: 1280px) {
 
     .general {
@@ -434,7 +440,7 @@ img {
 
 @media screen and (max-width: 1024px) {
 
-    .pet-hidden {
+    .pet-hidden-768 {
         display: none;
     }
 }
@@ -469,5 +475,126 @@ img {
     .footer-links:nth-of-type(2) {
         width: 47.1%;
         margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    .header {
+        padding: 30px 20px;
+    }
+
+    .header-burger {
+        display: block;
+        padding: 0;
+
+        border: none;
+        background-color: transparent;
+
+        cursor: pointer;
+        transition-duration: 0.5s;
+    }
+
+    .burger-active {
+        /* будет реализован поворот */
+    }
+
+    .menu {
+        position: fixed;
+        top: 0;
+        /* right: -100%; */
+        right: 0;
+
+        width: 320px;
+        height: 100vh;
+        margin: 0;
+
+        display: none;
+        align-items: center;
+        justify-content: center;
+
+        background-color: var(--basic-white);
+    }
+
+    .menu-active {
+        display: flex;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .nav-link {
+        font-size: 32px;
+    }
+
+    .general {
+        padding: 42px 10px;
+    }
+
+    .pets-wrapper {
+        row-gap: 42px;
+    }
+
+    .pets .section-title {
+        width: 100%;
+
+        font-size: 25px;
+        letter-spacing: 1.5px;
+    }
+
+    .pets-pagination {
+        gap: 10px;
+    }
+
+    .pets-slider {
+        margin-bottom: 2px;
+    }
+
+    .footer-wrapper {
+        padding: 30px 10px 0;
+        row-gap: 40px;
+    }
+
+    .footer-title {
+        width: 90%;
+        font-size: 25px;
+        letter-spacing: 1.5px;
+        text-align: center;
+    }
+
+    .footer-links {
+        width: 100%;
+
+        align-items: center;
+    }
+
+    .footer-links:nth-of-type(2) {
+        width: 100%;
+
+        row-gap: 40px;
+    }
+
+    .footer-image {
+        width: 87%;
+    }
+
+    .pet-hidden-320 {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 599px) {
+
+    .pet-hidden-320 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 320px) {
+
+    .footer-links:nth-of-type(2) .footer-link {
+        align-self: flex-start;
     }
 }
