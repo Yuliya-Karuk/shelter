@@ -9,11 +9,18 @@
     <title>Shelter</title>
 </head>
 <body>
-    <header class="header container">
+    <header class="container header">
         <a class="header-logo" href="#">
             <h1 class="title header-title">Cozy House</h1>
             <p class="header-text">Shelter for pets in Boston</p>
         </a>
+        <button class="header-burger" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="22" viewBox="0 0 30 22" fill="none">
+                <line y1="21" x2="30" y2="21" stroke="#F1CDB3" stroke-width="2" />
+                <line y1="11" x2="30" y2="11" stroke="#F1CDB3" stroke-width="2" />
+                <line y1="1" x2="30" y2="1" stroke="#F1CDB3" stroke-width="2" />
+            </svg>
+        </button>
         <nav class="menu">
             <ul class="nav-list">
                 <li class="nav-item">
@@ -33,10 +40,9 @@
     </header>
     <main class="main">
         <section class="start">
-            <div class="start-wrapper container">
-                <h2 class="visually-hidden">Start screen</h2>
+            <div class="container start-wrapper">
                 <div class="start-content">
-                    <p class="title start-title">Not only people need a house</p>
+                    <h2 class="section-title start-title">Not only people need a house</h2>
                     <p class="start-text">We offer to give a chance to a little and nice puppy with an extremely wide and
                         open heart. He or she will love you more than anybody else in the world, you will see!</p>
                     <a class="btn start-button" href="#pets">Make a friend</a>
@@ -46,12 +52,12 @@
             </div>
         </section>
         <section class="about">
-            <div class="container general">
+            <div class="container">
                 <div class="about-wrapper">
-                    <img class="about-img" src="../../assets/images/about_pets.png" width="698" height="728"
+                    <img class="about-img" src="../../assets/images/about_pets.png" width="300" height="408"
                         alt="pets photo">
                     <div class="about-content">
-                        <h2 class="title section-title">About the shelter “Cozy House”</h2>
+                        <h2 class="section-title about-title">About the shelter “Cozy House”</h2>
                         <p class="about-text">Currently we have 121 dogs and 342 cats on our hands and statistics show that
                             only 20% of them will find a family. The others will continue to live with us and will be
                             waiting for a lucky chance to become dearly loved.</p>
@@ -59,14 +65,14 @@
                             feel comfortable (including psychologically) and well. We are supported by 87 volunteers and 28
                             employees of various skill levels. About 12% of the animals are taken by the shelter staff.
                             Taking care of the animals, they become attached to the pets and would hardly ever leave them
-                            alone..</p>
+                            alone.</p>
                     </div>
                 </div>
             </div>
         </section>
         <section class="pets" id="pets">
-            <div class="container general pets-wrapper">
-                <h2 class="title section-title">Our friends who<br>are looking for a house</h2>
+            <div class="container pets-wrapper">
+                <h2 class="section-title pets-title">Our friends who<br>are looking for a house</h2>
                 <div class="pets-slider">
                     <button class="slider-btn button-left" type="button">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="6" viewBox="0 0 14 6" fill="none">
@@ -80,20 +86,20 @@
                             <p class="title pet-name">Katrine</p>
                             <button class="btn pet-button" type="button">Learn more</button>
                         </li>
-                        <li class="pet-item">
+                        <li class="pet-item pet-hidden-320">
                             <img class="pet-img" src="../../assets/images/pets_jennifer.png" width="270" height="270"
                                 alt="Jennifer photo">
                             <p class="title pet-name">Jennifer</p>
                             <button class="btn pet-button" type="button">Learn more</button>
                         </li>
-                        <li class="pet-item">
+                        <li class="pet-item pet-hidden-768">
                             <img class="pet-img" src="../../assets/images/pets_woody.png" width="270" height="270"
                                 alt="Woody photo">
                             <p class="title pet-name">Woody</p>
                             <button class="btn pet-button" type="button">Learn more</button>
                         </li>
                     </ul>
-                    <button class="slider-btn button-left" type="button">
+                    <button class="slider-btn button-right" type="button">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="6" viewBox="0 0 14 6" fill="none">
                             <path d="M0 4V2L11 2V0L14 3L11 6V4L0 4Z" fill="#292929" />
                         </svg>
@@ -103,8 +109,8 @@
             </div>
         </section>
         <section class="help" id="help">
-            <div class="container general help-wrapper">
-                <h2 class="title section-title">How you can help our shelter</h2>
+            <div class="container help-wrapper">
+                <h2 class="section-title help-title">How you can help our shelter</h2>
                 <ul class="help-list">
                     <li class="help-item">
                         <img class="help-img" src="../../assets/icons/pet_food.svg" width="60" height="60" alt="food help icon">
@@ -146,12 +152,12 @@
             </div>
         </section>
         <section class="donation">
-            <div class="container general">
+            <div class="container">
                 <div class="donation-wrapper">
                     <img class="donation-img" src="../../assets/images/donation_dog.png" width="505" height="261"
                         alt="photo of dog">
                     <div class="donation-content">
-                        <h2 class="title section-title">You can also make a donation</h2>
+                        <h2 class="section-title donation-title">You can also make a donation</h2>
                         <p class="title donation-bank">Name of the bank / Type of bank account</p>
                         <a class="btn title card-link" href="#no-scroll">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="23" viewBox="0 0 30 23" fill="none">
@@ -172,7 +178,7 @@
     <footer class="footer" id="contacts">
         <div class="container footer-wrapper">
             <div class="footer-links">
-                <h3 class="title footer-title">For questions and&nbsp;suggestions</h3>
+                <h3 class="title footer-title">For questions and suggestions</h3>
                 <a class="title footer-link" href="mailto:email@shelter.com">
                     <img class="footer-icon" src="../../assets/icons/email.svg" width="40" height="32" alt="icon for email">
                     <span class="footer-link-text">email@shelter.com</span>
@@ -183,11 +189,11 @@
                 </a>
             </div>
             <div class="footer-links">
-                <h3 class="title footer-title">We are waiting for&nbsp;your visit</h3>
+                <h3 class="title footer-title">We are waiting for your visit</h3>
                 <a class="title footer-link" href="https://goo.gl/maps/woF2BpxnCaMLBA6j8">
                     <img class="footer-icon" src="../../assets/icons/marker.svg" width="22" height="32"
                         alt="icon for email">
-                    <span class="footer-link-text">1 Central Street, Boston (entrance from the&nbsp;store)</span>
+                    <span class="footer-link-text">1 Central Street, Boston (entrance from the store)</span>
                 </a>
                 <a class="title footer-link" href="https://goo.gl/maps/Px8u9JoRdzQWDtKB6">
                     <img class="footer-icon" src="../../assets/icons/marker.svg" width="22" height="32"
