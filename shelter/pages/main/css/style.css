@@ -48,8 +48,8 @@ body {
 
 .container {
     max-width: 1280px;
+    padding: 80px 40px 100px;
     margin: 0 auto;
-    padding: 0;
 }
 
 img {
@@ -86,13 +86,12 @@ img {
     box-shadow: inset 0px 2px 2px var(--basic-dark);
 }
 
-.general {
-    padding: 80px 40px 100px;
-}
-
 .section-title {
     margin: 0;
 
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: 400;
     font-size: 35px;
     line-height: 1.3;
     letter-spacing: 2.1px;
@@ -212,7 +211,8 @@ img {
 }
 
 .start-wrapper {
-    padding: 180px 40px 0;
+    padding-top: 180px;
+    padding-bottom: 0;
 
     display: flex;
     column-gap: 42px;
@@ -228,20 +228,19 @@ img {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    row-gap: 42px;
 }
 
 .start-title {
     width: 81.6%;
-    margin: 0;
-    margin-bottom: 42px;
 
     font-size: 44px;
     line-height: 1.3;
+    letter-spacing: normal;
 }
 
 .start-text {
     margin: 0;
-    margin-bottom: 42px;
 
     line-height: 1.6;
 }
@@ -257,6 +256,7 @@ img {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     column-gap: 120px;
 
     color: var(--basic-dark);
@@ -264,23 +264,19 @@ img {
 
 .about-content {
     width: 35.9%;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
+    row-gap: 25px;
 }
 
-.about .section-title {
+.about-title {
     width: 86.2%;
-    margin-bottom: 23px;
 }
 
 .about-text {
     margin: 0;
-    margin-bottom: 25px;
-}
-
-.about-text:last-of-type {
-    margin-bottom: 0;
 }
 
 .about-img {
@@ -301,7 +297,7 @@ img {
     row-gap: 60px;
 }
 
-.pets .section-title {
+.pets-title {
     text-align: center;
     width: 33.33%;
 }
@@ -321,19 +317,21 @@ img {
 
     display: flex;
     justify-content: space-between;
-    /* column-gap: 90px; */
 
     list-style: none;
 }
 
 .pet-item {
+    width: 270px;
+    height: 435px;
     padding-bottom: 30px;
 
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    row-gap: 30px;
 
     background-color: var(--basic-active);
+    border-radius: 9px;
 }
 
 .pet-item:hover {
@@ -357,7 +355,7 @@ img {
 
     text-align: center;
     font-size: 20px;
-    line-height: normal;
+    line-height: 1.1;
     letter-spacing: 1.2px;
 }
 
@@ -410,10 +408,10 @@ img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    row-gap: 59px;
+    row-gap: 60px;
 }
 
-.help .section-title {
+.help-title {
     width: 25.9%;
     text-align: center;
 }
@@ -436,14 +434,14 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    row-gap: 30px;
 }
 
 .help-name {
     margin: 0;
 
     font-size: 20px;
-    line-height: 1.15;
+    line-height: 1.1;
     letter-spacing: 1.2px;
 }
 
@@ -479,8 +477,8 @@ img {
     gap: 20px;
 }
 
-.donation .section-title {
-    width: 78.9%;
+.donation-title {
+    width: 79%;
 }
 
 .donation-bank {
@@ -499,7 +497,7 @@ img {
     gap: 15px;
 
     font-size: 20px;
-    line-height: 1.15;
+    line-height: 1.1;
     letter-spacing: 1.2px;
 
     border-radius: 9px;
@@ -521,7 +519,7 @@ img {
 
 .footer {
     background: url("../../../assets/images/background_transparent.png"),
-        radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+        radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), #211F20;
 }
 
 .footer-wrapper {
@@ -591,29 +589,24 @@ img {
 
 /* MEDIA */
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1279px) {
 
-    .pets .section-title {
+    .pets-title {
         width: 56.5%;
     }
 
-    .help .section-title {
+    .help-title {
         width: 43.8%;
     }
 
     .help-list {
         width: 100%;
-        padding: 0 40px;
-        column-gap: unset;
-        justify-content: space-between;
+
+        column-gap: 60px;
     }
 
     .help-item {
         width: 26.9%;
-    }
-
-    .donation .section-title {
-        width: 85%;
     }
 
     .donation-content {
@@ -622,6 +615,7 @@ img {
 
     .footer-wrapper {
         flex-wrap: wrap;
+        row-gap: 65px;
     }
 
     .footer-links {
@@ -632,7 +626,7 @@ img {
     }
 
     .footer-links:nth-of-type(2) {
-        width: 43.5%;
+        width: 47.1%;
         row-gap: 32px;
     }
 
@@ -651,8 +645,8 @@ img {
 
 @media screen and (max-width: 768px) {
 
-    .general {
-        padding: 80px 30px 100px;
+    .container {
+        padding: 80px 30px 100px
     }
 
     .header {
@@ -661,14 +655,15 @@ img {
 
     .start-wrapper {
         width: 100%;
-        padding: 150px 40px 0;
+        padding-top: 150px;
+        padding-bottom: 0;
 
         flex-wrap: wrap;
         justify-content: center;
     }
 
     .start-content {
-        width: 66.9%;
+        width: 65%;
         margin-bottom: 98px;
     }
 
@@ -684,30 +679,26 @@ img {
         position: relative;
         left: 70px;
 
-        width: 82.75%;
+        width: 80.38%;
     }
 
     .about-wrapper {
         width: 61.0%;
         margin: 0 auto;
+
+        row-gap: 80px
     }
 
     .about-content {
         width: 100%;
-        margin-bottom: 80px;
 
         order: 1;
     }
 
     .about-img {
         width: 69.47%;
-        margin: 0 auto;
 
         order: 2;
-    }
-
-    .about .section-title {
-        margin-bottom: 25px;
     }
 
     .pets-slider {
@@ -718,22 +709,21 @@ img {
         column-gap: 40px;
     }
 
+    .help-item {
+        width: 170px;
+    }
+
     .donation-wrapper {
         width: 71.33%;
         margin: 0 auto;
 
-        row-gap: 60px;
+        row-gap: 61px;
     }
 
     .donation-content {
         width: 75.25%;
-        margin: 0 auto;
 
         order: 1;
-    }
-
-    .donation .section-title {
-        width: 79%;
     }
 
     .donation-img {
@@ -743,19 +733,10 @@ img {
 
     .footer-wrapper {
         padding: 30px 64px 0;
-
-        flex-wrap: wrap;
-        row-gap: 65px;
     }
 
     .footer-links {
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-
-    .footer-links:nth-of-type(2) {
-        width: 47.1%;
-        margin-right: 0;
+        margin: 0;
     }
 }
 
@@ -830,12 +811,13 @@ img {
         width: 100%;
 
         align-items: center;
+        row-gap: 40px;
     }
 
     .footer-links:nth-of-type(2) {
         width: 100%;
 
-        row-gap: 40px;
+        row-gap: 38px;
     }
 
     .footer-image {
@@ -845,27 +827,29 @@ img {
 
 @media screen and (max-width: 600px) {
 
+    .container {
+        padding: 42px 10px;
+    }
+
+    .section-title {
+        font-size: 25px;
+        letter-spacing: 1.5px;
+        text-align: center;
+    }
+
     .header {
         padding: 30px 20px 0;
     }
 
-    .start-title {
-        width: 85%;
+    .start-wrapper {
+        padding: 150px 10px 0;
     }
 
-    .section-title {
+    .pets-title {
         width: 100%;
     }
 
-    .about .section-title {
-        text-align: center;
-    }
-
-    .pets .section-title {
-        width: 100%;
-    }
-
-    .help .section-title {
+    .help-title {
         width: 73.8%;
     }
 
@@ -882,24 +866,9 @@ img {
         align-items: center;
         text-align: justify;
     }
-
 }
 
 @media screen and (max-width: 480px) {
-
-    .section-title {
-        font-size: 25px;
-        letter-spacing: 1.5px;
-        text-align: center;
-    }
-
-    .general {
-        padding: 42px 10px;
-    }
-
-    .start-wrapper {
-        padding: 150px 10px 0;
-    }
 
     .start-content {
         width: 100%;
@@ -910,14 +879,8 @@ img {
     }
 
     .start-img {
-        width: 86.7%;
+        width: 86.5%;
         left: 6.15%;
-    }
-
-    .start-title {
-        font-size: 25px;
-        letter-spacing: 1.5px;
-        text-align: center;
     }
 
     .about-wrapper {
@@ -930,11 +893,14 @@ img {
 
     .about-content {
         align-items: center;
-        margin-bottom: 0;
+    }
+
+    .about-text:last-of-type {
+        margin-top: -3px;
     }
 
     .about-img {
-        width: 85%;
+        width: 86.1%;
     }
 
     .pets-slider {
@@ -962,10 +928,6 @@ img {
         margin-right: 58px;
     }
 
-    .button-left {
-        order: 2
-    }
-
     .help-wrapper {
         row-gap: 45px;
     }
@@ -973,12 +935,15 @@ img {
     .help-list {
         padding: 0 5px;
 
-        row-gap: 30px;
+        row-gap: 29px;
+        justify-content: flex-start;
         column-gap: 30px;
     }
 
     .help-item {
-        width: 43.35%;
+        width: 130px;
+        height: 87px;
+
         gap: 20px;
     }
 
@@ -988,7 +953,6 @@ img {
 
     .help-name {
         font-size: 15px;
-        line-height: 1.1;
         letter-spacing: 0.9px;
     }
 
@@ -1006,6 +970,9 @@ img {
         line-height: unset;
     }
 
+    .footer-wrapper {
+        padding: 30px 10px 0;
+    }
 }
 
 @media screen and (max-width: 320px) {
@@ -1021,6 +988,5 @@ img {
     .footer-links:nth-of-type(2) .footer-link {
         align-self: flex-start;
     }
-
 }
 
