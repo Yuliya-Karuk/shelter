@@ -31,11 +31,24 @@ for (let i = 0; i < menuLinks.length; i++) {
 }
 
 /* SLIDER */
+import petsJSON from '../../../data/pets.json' assert { type: 'json' }
+
 const sliderButtonLeft = document.querySelector(".button-left")
 const sliderButtonRight = document.querySelector(".button-right")
-const petItems = document.querySelectorAll(".pet-item")
+const petListVisible = document.querySelector(".pet-list-visible")
+const petListLeft = document.querySelector(".pet-list-left")
+const petListRight = document.querySelector(".pet-list-right")
+const slider = document.querySelector(".slider-container")
 
-import petsJSON from '../../../data/pets.json' assert { type: 'json' };
+let listVisible = getRandomArray();
+let listRight = getRandomArray(listVisible);
+let listLeft = getRandomArray(listVisible);
+
+const CssClasses = {
+    ANIMATE_LEFT : "animate-left",
+    ANIMATE_RIGHT : "animate-right",
+    NO_TRANSITION : "no-transition",
+}
 
 function getRandomArray(arr = []) {
   const newArr = [];
@@ -46,27 +59,59 @@ function getRandomArray(arr = []) {
   return newArr;
 }
 
-function changeSlider(arr) {
-    for (let i = 0; i < petItems.length; i++) {
-        petItems[i].innerHTML =
+function formListSlider(arr, element) {
+    const elementItems = element.querySelectorAll(".pet-item")
+    for (let i = 0; i < elementItems.length; i++) {
+        elementItems[i].innerHTML =
             `<img class="pet-img" src="${petsJSON[arr[i]].img}" width="270" height="270" alt="${petsJSON[arr[i]].name} photo">
             <p class="title pet-name">${petsJSON[arr[i]].name}</p>
             <button class="btn pet-button" type="button">Learn more</button>`
     }
 }
 
-let sliderArr = getRandomArray();
+function disableButtons() {
+    sliderButtonLeft.setAttribute('disabled', true);
+    sliderButtonRight.setAttribute('disabled', true);
+}
+function enableButtons() {
+    sliderButtonLeft.removeAttribute('disabled');
+    sliderButtonRight.removeAttribute('disabled');
+}
 
-document.addEventListener("DOMContentLoaded", changeSlider(sliderArr));
+function createSlider() {
+    formListSlider(listVisible, petListVisible);
+    formListSlider(listRight, petListRight);
+    formListSlider(listLeft, petListLeft);
+}
+
+function endTransition() {
+    slider.classList.add(CssClasses.NO_TRANSITION);
+    slider.classList.remove(CssClasses.ANIMATE_LEFT, CssClasses.ANIMATE_RIGHT);
+    setTimeout(() => {
+        slider.classList.remove(CssClasses.NO_TRANSITION);;
+    }, 1);
+
+    createSlider();
+    enableButtons();
+}
+
+document.addEventListener("DOMContentLoaded", createSlider());
 sliderButtonLeft.addEventListener("click", function() {
-    sliderArr = getRandomArray(sliderArr);
-    changeSlider(sliderArr);
+    disableButtons();
+    slider.classList.add(CssClasses.ANIMATE_LEFT)
+    listLeft = listVisible;
+    listVisible = listRight;
+    listRight = getRandomArray(listVisible);
+    slider.addEventListener('transitionend', endTransition);
 })
 
-document.addEventListener("DOMContentLoaded", changeSlider(sliderArr));
 sliderButtonRight.addEventListener("click", function() {
-    sliderArr = getRandomArray(sliderArr);
-    changeSlider(sliderArr);
+    disableButtons();
+    slider.classList.add(CssClasses.ANIMATE_RIGHT);
+    listRight = listVisible;
+    listVisible = listLeft;
+    listLeft = getRandomArray(listVisible);
+    slider.addEventListener('transitionend', endTransition);
 })
 
 
