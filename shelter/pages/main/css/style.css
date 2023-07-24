@@ -714,6 +714,7 @@ img {
 
     .pets-list {
         min-width: 580px;
+        justify-content: space-between;
     }
 }
 
@@ -814,6 +815,7 @@ img {
 
     .pets-list {
         min-width: 310px;
+        justify-content: center;
     }
 
     .header-burger {
@@ -881,10 +883,6 @@ img {
 
     .pet-hidden-320 {
         display: none;
-    }
-
-    .pets-list {
-        justify-content: center;
     }
 
     .footer-wrapper {
@@ -1088,6 +1086,10 @@ img {
 }
 
 @media screen and (max-width: 320px) {
+
+    .pets-list {
+        min-width: 300px;
+    }
 
     .about-content {
         padding: 0 15px;
