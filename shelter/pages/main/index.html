@@ -9,6 +9,7 @@
     <title>Shelter</title>
 </head>
 <body>
+    <div class="shadow"></div>
     <header class="container header">
         <a class="header-logo" href="#">
             <h1 class="title header-title">Cozy House</h1>
@@ -79,26 +80,67 @@
                             <path d="M14 2V4H3V6L0 3L3 0V2H14Z" fill="#292929" />
                         </svg>
                     </button>
-                    <ul class="pets-list">
-                        <li class="pet-item">
-                            <img class="pet-img" src="../../assets/images/pets_katrine.png" width="270" height="270"
-                                alt="Katrine photo">
-                            <p class="title pet-name">Katrine</p>
-                            <button class="btn pet-button" type="button">Learn more</button>
-                        </li>
-                        <li class="pet-item pet-hidden-320">
-                            <img class="pet-img" src="../../assets/images/pets_jennifer.png" width="270" height="270"
-                                alt="Jennifer photo">
-                            <p class="title pet-name">Jennifer</p>
-                            <button class="btn pet-button" type="button">Learn more</button>
-                        </li>
-                        <li class="pet-item pet-hidden-768">
-                            <img class="pet-img" src="../../assets/images/pets_woody.png" width="270" height="270"
-                                alt="Woody photo">
-                            <p class="title pet-name">Woody</p>
-                            <button class="btn pet-button" type="button">Learn more</button>
-                        </li>
-                    </ul>
+                    <div class="slider-wrapper">
+                        <div class="slider-container">
+                            <ul class="pets-list pet-list-left">
+                                <li class="pet-item">
+                                    <img class="pet-img" src="../../assets/images/pets_katrine.png" width="270" height="270"
+                                        alt="Katrine photo">
+                                    <p class="title pet-name">Katrine</p>
+                                    <button class="btn pet-button" type="button">Learn more</button>
+                                </li>
+                                <li class="pet-item pet-hidden-320">
+                                    <img class="pet-img" src="../../assets/images/pets_jennifer.png" width="270" height="270"
+                                        alt="Jennifer photo">
+                                    <p class="title pet-name">Jennifer</p>
+                                    <button class="btn pet-button" type="button">Learn more</button>
+                                </li>
+                                <li class="pet-item pet-hidden-768">
+                                    <img class="pet-img" src="../../assets/images/pets_woody.png" width="270" height="270"
+                                        alt="Woody photo">
+                                    <p class="title pet-name">Woody</p>
+                                    <button class="btn pet-button" type="button">Learn more</button>
+                                </li>
+                            </ul>
+                            <ul class="pets-list pet-list-visible">
+                                <li class="pet-item">
+                                    <img class="pet-img" src="../../assets/images/pets_katrine.png" width="270" height="270"
+                                        alt="Katrine photo">
+                                    <p class="title pet-name">Katrine</p>
+                                    <button class="btn pet-button" type="button">Learn more</button>
+                                </li>
+                                <li class="pet-item pet-hidden-320">
+                                    <img class="pet-img" src="../../assets/images/pets_jennifer.png" width="270" height="270"
+                                        alt="Jennifer photo">
+                                    <p class="title pet-name">Jennifer</p>
+                                    <button class="btn pet-button" type="button">Learn more</button>
+                                </li>
+                                <li class="pet-item pet-hidden-768">
+                                    <img class="pet-img" src="../../assets/images/pets_woody.png" width="270" height="270"
+                                        alt="Woody photo">
+                                    <p class="title pet-name">Woody</p>
+                                    <button class="btn pet-button" type="button">Learn more</button>
+                                </li>
+                            </ul>
+                            <ul class="pets-list pet-list-right">
+                                <li class="pet-item">
+                                    <img class="pet-img" src="../../assets/images/pets_katrine.png" width="270" height="270" alt="Katrine photo">
+                                    <p class="title pet-name">Katrine</p>
+                                    <button class="btn pet-button" type="button">Learn more</button>
+                                </li>
+                                <li class="pet-item pet-hidden-320">
+                                    <img class="pet-img" src="../../assets/images/pets_jennifer.png" width="270" height="270" alt="Jennifer photo">
+                                    <p class="title pet-name">Jennifer</p>
+                                    <button class="btn pet-button" type="button">Learn more</button>
+                                </li>
+                                <li class="pet-item pet-hidden-768">
+                                    <img class="pet-img" src="../../assets/images/pets_woody.png" width="270" height="270" alt="Woody photo">
+                                    <p class="title pet-name">Woody</p>
+                                    <button class="btn pet-button" type="button">Learn more</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                     <button class="slider-btn button-right" type="button">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="6" viewBox="0 0 14 6" fill="none">
                             <path d="M0 4V2L11 2V0L14 3L11 6V4L0 4Z" fill="#292929" />
@@ -107,6 +149,7 @@
                 </div>
                 <a class="btn pet-main-btn" href="../pets/pets.html">Get to know the rest</a>
             </div>
+            
         </section>
         <section class="help" id="help">
             <div class="container help-wrapper">
@@ -205,6 +248,48 @@
                 alt="footer pet image">
         </div>
     </footer>
+    <div class="overlay visually-hidden">
+        <div class="popup">
+            <img class="popup-img" src="../../assets/images/pets_jennifer.png" width="500" height="500" alt="">
+            <div class="popup-content">
+                <div class="popup-title">
+                    <h3 class="section-title popup-name">Jennifer</h3>
+                    <h4 class="title popup-kind">Dog - Labrador</h4>
+                </div>
+                <p class="title popup-description">Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a
+                    new forever home. This girl really enjoys
+                    being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all
+                    of her
+                    favorite toys.</p>
+                <ul class="popup-list">
+                    <li class="title popup-item">
+                        <span class="popup-bold">Age:</span>
+                        2 months
+                    </li>
+                    <li class="title popup-item">
+                        <span class="popup-bold">Inoculations:</span>
+                        none
+                    </li>
+                    <li class="title popup-item">
+                        <span class="popup-bold">Diseases:</span>
+                        none
+                    </li>
+                    <li class="title popup-item">
+                        <span class="popup-bold">Parasites:</span>
+                        none
+                    </li>
+                </ul>
+                <button class="close-popup" type="button">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M7.42618 6.00003L11.7046 1.72158C12.0985 1.32775 12.0985 0.689213 11.7046 0.295433C11.3108 -0.0984027 10.6723 -0.0984027 10.2785 0.295433L5.99998 4.57394L1.72148 0.295377C1.32765 -0.098459 0.68917 -0.098459 0.295334 0.295377C-0.0984448 0.689213 -0.0984448 1.32775 0.295334 1.72153L4.57383 5.99997L0.295334 10.2785C-0.0984448 10.6723 -0.0984448 11.3108 0.295334 11.7046C0.68917 12.0985 1.32765 12.0985 1.72148 11.7046L5.99998 7.42612L10.2785 11.7046C10.6723 12.0985 11.3108 12.0985 11.7046 11.7046C12.0985 11.3108 12.0985 10.6723 11.7046 10.2785L7.42618 6.00003Z"
+                            fill="#292929" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
     <script src="./js/index.js"></script>
+    <script src="./js/script.js" type="module"></script>
 </body>
 </html>
