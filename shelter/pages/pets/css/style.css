@@ -311,8 +311,7 @@ img {
     transition-duration: 0.5s;
 }
 
-.slider-btn:hover,
-.slider-btn:focus {
+.slider-btn:hover {
     background-color: var(--orange-hover);
     border: 2px solid var(--orange-hover);
 }
