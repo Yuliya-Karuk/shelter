@@ -286,6 +286,8 @@ img {
 /* PETS */
 
 .pets {
+    position: relative;
+
     background: var(--basic-light);
 }
 
@@ -311,12 +313,14 @@ img {
 }
 
 .pets-list {
-    width: 82.5%;
+    width: 100%;
+    min-width: 1080px;
+
     margin: 0;
     padding: 0;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 
     list-style: none;
 }
@@ -587,9 +591,206 @@ img {
     text-decoration: underline;
 }
 
+/* BURGER MENU */
+
+.shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(41, 41, 41, 0.60);
+    z-index: 10;
+    visibility: hidden;
+}
+
+.shadow-active {
+    visibility: visible;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+/* SLIDER */
+
+.slider-wrapper {
+    width: 90%;
+    overflow: hidden;
+}
+
+.slider-container {
+
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+
+    width: 100%;
+
+    transform: translateX(-100%);
+    transition: 1s;
+}
+
+.animate-left {
+    transform: translateX(-200%);
+}
+
+.animate-right {
+    transform: translateX(0%);
+}
+
+.no-transition {
+    transition: none;
+}
+
+/* POP-UP */
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+
+    width: 100%;
+    height: 100%;
+
+    align-items: center;
+    background-color: rgba(41, 41, 41, .6);
+    display: flex;
+    justify-content: center;
+}
+
+.popup {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 10;
+
+    width: 900px;
+    height: 500px;
+
+    display: flex;
+    gap: 29px;
+
+    background-color: var(--basic-active);
+    border-radius: 9px;
+}
+
+.popup-img {
+    aspect-ratio: 1 / 1;
+}
+
+.popup-content {
+    position: relative;
+
+    padding: 50px 20px 0 0;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+
+    font-size: 15px;
+    line-height: 1.1;
+    letter-spacing: 0.9px;
+    color: #000000;
+}
+
+.popup-kind {
+    margin: 0;
+    margin-top: 9px;
+
+    font-size: 20px;
+    line-height: 1.15;
+    letter-spacing: 1.2px;
+}
+
+.popup-description {
+    margin: 0;
+    line-height: 1.14;
+}
+
+.popup-bold {
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.popup-list {
+    padding: 0;
+    padding-left: 14px;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+
+    list-style: none;
+}
+
+.close-popup {
+    position: absolute;
+    right: -40px;
+    top: -53px;
+    z-index: 20;
+
+    width: 52px;
+    height: 52px;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid var(--basic-orange);
+    border-radius: 50%;
+    background-color: transparent;
+
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+
+.close-popup:hover,
+.close-popup:focus {
+    border: 2px solid var(--orange-hover);
+    background-color: var(--orange-hover);
+}
+
+.popup-item {
+    position: relative;
+}
+
+.popup-item::before {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 6px;
+    width: 4px;
+    height: 4px;
+    background-color: var(--basic-orange);
+    border-radius: 50%;
+}
+
 /* MEDIA */
 
 @media screen and (max-width: 1279px) {
+
+    .pet-hidden-768 {
+        display: none;
+    }
+
+    .slider-wrapper {
+        width: 720px;
+    }
+
+    .pets-list {
+        min-width: 720px;
+    }
+
+    .pet-hidden-768 {
+        display: none;
+    }
 
     .pets-title {
         width: 56.5%;
@@ -638,8 +839,40 @@ img {
 
 @media screen and (max-width: 1080px) {
 
-    .pet-hidden-768 {
-        display: none;
+    .popup {
+        width: 630px;
+        height: 350px;
+
+        gap: 10px;
+    }
+
+    .popup-img {
+        width: 350px;
+    }
+
+    .popup-content {
+        padding: 10px 9px 0 0;
+
+        row-gap: 20px;
+    }
+
+    .popup-description {
+        font-size: 13px;
+        letter-spacing: 0.78px;
+        line-height: 1.1;
+    }
+
+    .popup-list {
+        gap: 6px;
+    }
+
+    .slider-wrapper {
+        width: 580px;
+    }
+
+    .pets-list {
+        min-width: 580px;
+        justify-content: space-between;
     }
 }
 
@@ -701,14 +934,6 @@ img {
         order: 2;
     }
 
-    .pets-slider {
-        column-gap: 12px;
-    }
-
-    .pets-list {
-        column-gap: 40px;
-    }
-
     .help-item {
         width: 170px;
     }
@@ -742,8 +967,42 @@ img {
 
 @media screen and (max-width: 767px) {
 
+    .popup {
+        width: 240px;
+        height: fit-content;
+    }
+
+    .popup-img {
+        display: none;
+    }
+
+    .popup-content {
+        padding: 10px;
+    }
+
+    .popup-kind,
+    .popup-name {
+        text-align: center;
+    }
+
+    .popup-description {
+        text-align: justify;
+    }
+
+    .slider-wrapper {
+        width: 310px;
+    }
+
+    .pets-list {
+        min-width: 310px;
+        justify-content: center;
+    }
+
     .header-burger {
-        display: block;
+        position: relative;
+        z-index: 30;
+
+        display: flex;
         padding: 0;
 
         border: none;
@@ -753,34 +1012,49 @@ img {
         transition-duration: 0.5s;
     }
 
+    .header-burger:hover line,
+    .header-burger:focus line {
+        transition-duration: 0.5s;
+        stroke: var(--orange-hover);
+    }
+
     .burger-active {
-        /* будет реализован поворот */
+        transform: rotate(90deg);
     }
 
     .menu {
         position: fixed;
         top: 0;
-        /* right: -100%; */
-        right: 0;
+        right: -100%;
+        z-index: 20;
 
         width: 320px;
         height: 100vh;
         margin: 0;
 
-        display: none;
+        display: flex;
         align-items: center;
         justify-content: center;
 
-        background-color: var(--basic-white);
+        background: var(--basic-dark);
+
+        cursor: pointer;
+        transition-duration: 0.5s;
     }
 
     .menu-active {
         display: flex;
+        right: 0;
     }
 
     .nav-list {
         flex-direction: column;
         gap: 40px;
+    }
+
+    .nav-item {
+        display: flex;
+        justify-content: center;
     }
 
     .nav-link {
@@ -789,10 +1063,6 @@ img {
 
     .pet-hidden-320 {
         display: none;
-    }
-
-    .pets-list {
-        justify-content: center;
     }
 
     .footer-wrapper {
@@ -846,6 +1116,10 @@ img {
         padding: 150px 10px 0;
     }
 
+    .start-img {
+        left: 6.15%;
+    }
+
     .pets-title {
         width: 100%;
     }
@@ -867,9 +1141,44 @@ img {
         align-items: center;
         text-align: justify;
     }
+
+    .footer-wrapper {
+        padding: 30px 10px 0;
+    }
 }
 
 @media screen and (max-width: 480px) {
+
+    .slider-wrapper {
+        margin: 0 auto;
+    }
+
+    .pets-slider {
+        flex-wrap: wrap;
+    }
+
+    .pets-wrapper {
+        row-gap: 42px;
+    }
+
+    .pets-list {
+        width: 100%;
+        order: 1;
+
+        margin-bottom: 20px;
+    }
+
+    .button-left {
+        order: 2;
+        margin-left: 58px;
+        margin-right: 45px;
+    }
+
+    .button-right {
+        order: 3;
+        margin-right: 58px;
+        margin-left: 45px;
+    }
 
     .start-content {
         width: 100%;
@@ -881,7 +1190,6 @@ img {
 
     .start-img {
         width: 86.5%;
-        left: 6.15%;
     }
 
     .about-wrapper {
@@ -904,31 +1212,6 @@ img {
         width: 86.1%;
     }
 
-    .pets-slider {
-        flex-wrap: wrap;
-    }
-
-    .pets-wrapper {
-        row-gap: 42px;
-    }
-
-    .pets-list {
-        width: 100%;
-        order: 1;
-
-        margin-bottom: 20px;
-    }
-
-    .button-left {
-        order: 2;
-        margin-left: 58px;
-    }
-
-    .button-right {
-        order: 3;
-        margin-right: 58px;
-    }
-
     .help-wrapper {
         row-gap: 45px;
     }
@@ -937,7 +1220,6 @@ img {
         padding: 0 5px;
 
         row-gap: 29px;
-        justify-content: flex-start;
         column-gap: 30px;
     }
 
@@ -970,13 +1252,38 @@ img {
         letter-spacing: normal;
         line-height: unset;
     }
+}
 
-    .footer-wrapper {
-        padding: 30px 10px 0;
+@media screen and (max-width: 390px) {
+
+    .close-popup {
+        right: -30px;
+    }
+
+    .popup-name {
+        font-size: 35px;
+        letter-spacing: 2.1px;
+    }
+
+    .popup-list {
+        margin-top: 4px;
+        padding-left: 16px;
+    }
+
+    .button-left {
+        margin-right: 0;
+    }
+
+    .button-right {
+        margin-left: 0;
     }
 }
 
 @media screen and (max-width: 320px) {
+
+    .pets-list {
+        min-width: 300px;
+    }
 
     .about-content {
         padding: 0 15px;
@@ -984,6 +1291,10 @@ img {
 
     .about-text {
         font-size: 15px;
+    }
+
+    .help-list {
+        justify-content: flex-start;
     }
 
     .footer-links:nth-of-type(2) .footer-link {
